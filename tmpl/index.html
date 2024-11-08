@@ -3,13 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Page</title>
+  <title>Dynamic Navigation Bar</title>
   <style>
+    /* Basic styling for the body */
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(188, 214, 188);
+    }
+
+    /* Container for the navbar */
+    .navbar {
+      display: grid;  /* Use grid layout */
+      grid-template-columns: repeat(auto-fill, minmax(120px, auto)); /* Ensure each item adapts to content size */
+      gap: 10px;  /* Space between items */
+      padding: 10px;
+      background-color: #333;
+      box-sizing: border-box; /* Make sure padding is included in width */
+    }
+
+    /* Style for each tab */
+    .menu-item {
       text-align: center;
       margin-top: 20%;
-    }npm 
+    }
     h1 {
       color: #4CAF50;
     }
@@ -19,7 +37,15 @@
   </style>
 </head>
 <body>
-  <h1>Server Test Page</h1>
-  <p>If you're seeing this message, your local server is working!</p>
+<grid>
+  <div class="navbar">
+    <div class="menu-item"><a href="#">Primarie</a></div>
+    <div class="menu-item"><a href="#">Anaf</a></div>
+    <div class="menu-item"><a href="#">Prefectura</a></div>
+    <div class="menu-item"><a href="#">Judeacatorie</a></div>
+    <div class="menu-item"><a href="#">Consiliu Judetean</a></div>
+    <div class="menu-item"><a href="#">Longer Item Name That Expands the Tab</a></div> <!-- Example of a long name -->
+  </div>
+</grid>
 </body>
 </html>
