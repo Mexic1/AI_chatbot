@@ -3,23 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Page</title>
+  <title>Dynamic Navigation Bar</title>
   <style>
+    /* Basic styling for the body */
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(188, 214, 188);
+    }
+
+    /* Container for the navbar */
+    .navbar {
+      display: grid;  /* Use grid layout */
+      grid-template-columns: repeat(auto-fill, minmax(120px, auto)); /* Ensure each item adapts to content size */
+      gap: 10px;  /* Space between items */
+      padding: 10px;
+      background-color: #333;
+      box-sizing: border-box; /* Make sure padding is included in width */
+    }
+
+    /* Style for each tab */
+    .menu-item {
       text-align: center;
-      margin-top: 20%;
+      background-color: #444;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease; /* Smooth transition for hover effects */
+      white-space: nowrap; /* Prevent text wrapping */
     }
-    h1 {
-      color: #4CAF50;
+
+    /* Prevent text from wrapping and apply nowrap */
+    .menu-item a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap; /* Prevent text wrapping */
+      font-size: calc(12px + 0.5vw); /* Responsive font size */
     }
-    p {
-      color: #555;
+
+    /* Hover effect for tab item */
+    .menu-item:hover {
+      background-color: #555;
+      transform: scale(1.1);  /* Slightly enlarge the tab */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    }
+
+    .menu-item:hover a {
+      border-bottom: 3px solid green; /* Add blue underline on hover */
+      padding-bottom: 7px; /* Adjust padding to show underline */
+    }
+
+    /* Ensure all items take up equal space and adjust according to the screen size */
+    .navbar {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, auto)); /* Adjust for dynamic content size */
+    }
+
+    /* Optional: Style for when on small screens */
+    @media (max-width: 600px) {
+      .navbar {
+        grid-template-columns: 1fr 1fr;  /* Stack items into 2 columns for small screens */
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Server Test Page</h1>
-  <p>If you're seeing this message, your local server is working!</p>
+<grid>
+  <div class="navbar">
+    <div class="menu-item"><a href="#">Primarie</a></div>
+    <div class="menu-item"><a href="#">Anaf</a></div>
+    <div class="menu-item"><a href="#">Prefectura</a></div>
+    <div class="menu-item"><a href="#">Judeacatorie</a></div>
+    <div class="menu-item"><a href="#">Consiliu Judetean</a></div>
+    <div class="menu-item"><a href="#">Longer Item Name That Expands the Tab</a></div> <!-- Example of a long name -->
+  </div>
+</grid>
 </body>
 </html>
